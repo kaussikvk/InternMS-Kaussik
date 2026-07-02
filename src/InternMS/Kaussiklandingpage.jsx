@@ -57,9 +57,9 @@ export default function KaussikInternMS() {
     <div className="ims-page">
 
       <header className="ims-navbar">
-        <div className="ims-container ims-navbar__inner">
+        <div className="ims-navbar__inner">
           <div className="ims-logo">
-            InterMS
+            InternMS
             <span className="ims-logo__by">by Kaussik</span>
           </div>
           <div className="ims-navbar__actions">
@@ -82,10 +82,14 @@ export default function KaussikInternMS() {
               <img src={iconSparkle} alt="" />
               Next-Generation Placement OS
             </span>
-            <h1>
-              Seamless Internships.
-              <span className="ims-hero__accent">Smarter Management.</span>
-            </h1>
+            <a className="hero-title">
+              Seamless<br/>
+              Interships. <br/>
+              <span >Smarter</span><br/>
+              <span>Management.</span>
+
+            </a>
+            <div className="hero-line"></div>
             <p>
               Bridging the gap between ambitious talent and global
               opportunities. The definitive operating system for
@@ -133,6 +137,7 @@ export default function KaussikInternMS() {
 
      
       <section className="ims-section">
+        <section className="ims-bgcolor">
         <div className="ims-container">
           <div className="ims-section__heading-row">
             <div>
@@ -159,16 +164,17 @@ export default function KaussikInternMS() {
             ))}
           </div>
         </div>
+        </section>
       </section>
 
      
       <section className="ims-section">
         <div className="ims-container ims-audience">
           <div className="ims-audience__content">
-            <h2 className="ims-section-title ims-section-title--left">
-              For Students:
+            <a className="ims-section-title ims-section-title--left">
+              For Students:<br/>
               <span className="ims-hero__accent">Your Career Launchpad.</span>
-            </h2>
+            </a>
 
             <ul className="ims-checklist">
               {STUDENT_POINTS.map((p) => (
@@ -184,7 +190,7 @@ export default function KaussikInternMS() {
 
             
             <div className="ims-tabs">
-              <button type="button" className="ims-tabs__btn ims-tabs__btn--active">
+              <button type="button" className="ims-tabs__btn">
                 Students
               </button>
               <button type="button" className="ims-tabs__btn">
