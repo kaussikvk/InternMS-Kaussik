@@ -1,0 +1,179 @@
+.ims-login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* LEFT PANEL */
+.ims-login-left {
+  background: linear-gradient(135deg, var(--ims-primary-dark), var(--ims-primary));
+  color: var(--ims-white);
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Explicit light-to-dark blue gradient, matching the design mockups.
+   Add this class alongside .ims-login-left (see Register.jsx) to use it
+   independently of --ims-primary / --ims-primary-dark. */
+.ims-login-left--gradient {
+  background: linear-gradient(160deg, #2f5fe3 0%, #1a3aa8 45%, #0c1f5c 100%);
+}
+
+/* subtle glow to match the mockup's soft radial highlight top-left */
+.ims-login-left--gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 15% 10%,
+    rgba(120, 170, 255, 0.35),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.ims-login-left__inner {
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+.ims-login-left h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 40px 0 16px;
+}
+
+.ims-login-left p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.ims-login-stats {
+  display: flex;
+  gap: 40px;
+}
+
+.ims-login-stats strong {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.ims-login-stats span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* RIGHT PANEL */
+.ims-login-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--ims-white);
+}
+
+.ims-login-form-wrap {
+  width: 100%;
+  max-width: 380px;
+}
+
+.ims-login-form-wrap h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--ims-text);
+}
+
+.ims-login-subtitle {
+  color: var(--ims-text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 30px;
+}
+
+.ims-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ims-login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ims-text);
+}
+
+.ims-login-form input[type="email"],
+.ims-login-form input[type="password"] {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--ims-border);
+  font-size: 0.95rem;
+  font-weight: 400;
+  outline: none;
+}
+
+.ims-login-form input:focus {
+  border-color: var(--ims-primary);
+}
+
+.ims-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.ims-login-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  color: var(--ims-text-muted);
+}
+
+.ims-login-error {
+  color: #d92d20;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.ims-login-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 13px 22px;
+  font-size: 1rem;
+}
+
+.ims-login-footer-text {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ims-text-muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .ims-login-page {
+    grid-template-columns: 1fr;
+  }
+  .ims-login-left {
+    padding: 40px 30px;
+  }
+  .ims-login-left h1 {
+    font-size: 1.6rem;
+    margin-top: 24px;
+  }
+}

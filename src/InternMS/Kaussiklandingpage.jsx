@@ -1,5 +1,6 @@
 import React from "react";
 import "./Kaussiklandingpage.css";
+import { Link } from "react-router-dom";
 
 import iconSparkle from "../assets/Icon.png";
 import iconAutomatedMatching from "../assets/Icon (1).png";
@@ -63,12 +64,12 @@ export default function KaussikInternMS() {
             <span className="ims-logo__by">by Kaussik</span>
           </div>
           <div className="ims-navbar__actions">
-            <a href="/login" className="ims-link">
+            <Link to="/login" className="ims-link">
               Login
-            </a>
-            <a href="/register" className="ims-btn ims-btn--dark">
+            </Link>
+            <Link to="/register" className="ims-btn ims-btn--dark">
               Register
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -96,9 +97,9 @@ export default function KaussikInternMS() {
               universities, students, and world-class employers.
             </p>
             <div className="ims-hero__actions">
-              <a href="/register" className="ims-btn ims-btn--dark">
+              <Link to="/login" className="ims-btn ims-btn--dark">
                 Get Started &rarr;
-              </a>
+              </Link>
               <button className="ims-btn ims-btn--outline">Book a Demo</button>
             </div>
           </div>
