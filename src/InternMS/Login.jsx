@@ -21,15 +21,15 @@ export default function Login() {
     }
 
     setError("");
-    // TODO: replace with your real authentication call
+  
     console.log("Logging in with:", form);
 
-    navigate("/"); // redirect after successful login
+    navigate("/");
   };
 
   return (
     <div className="ims-login-page">
-      {/* LEFT - brand panel */}
+     
       <div className="ims-login-left ims-login-left--gradient">
         <div className="ims-login-left__inner">
           <Link to="/" className="ims-logo ims-logo--light">
@@ -56,7 +56,7 @@ export default function Login() {
         </div>
       </div>
 
-      {/* RIGHT - form panel */}
+   
       <div className="ims-login-right">
         <div className="ims-login-form-wrap">
           <h2>Log in to InternMS</h2>

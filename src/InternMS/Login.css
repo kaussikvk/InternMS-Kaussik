@@ -5,7 +5,7 @@
   font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
-/* LEFT PANEL */
+
 .ims-login-left {
   background: linear-gradient(135deg, var(--ims-primary-dark), var(--ims-primary));
   color: var(--ims-white);
@@ -16,14 +16,11 @@
   overflow: hidden;
 }
 
-/* Explicit light-to-dark blue gradient, matching the design mockups.
-   Add this class alongside .ims-login-left (see Register.jsx) to use it
-   independently of --ims-primary / --ims-primary-dark. */
 .ims-login-left--gradient {
   background: linear-gradient(160deg, #2f5fe3 0%, #1a3aa8 45%, #0c1f5c 100%);
 }
 
-/* subtle glow to match the mockup's soft radial highlight top-left */
+
 .ims-login-left--gradient::before {
   content: "";
   position: absolute;
@@ -164,7 +161,7 @@
   color: var(--ims-text-muted);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 900px) {
   .ims-login-page {
     grid-template-columns: 1fr;

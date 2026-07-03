@@ -4,12 +4,11 @@ import "./Kaussiklandingpage.css";
 import "./Login.css";
 import "./Register.css";
 
-// Colored icons — used on the light form panel (role tabs)
+
 import iconMentorTab from "../assets/icon-mentor-people.png";
 import iconInternTab from "../assets/icon-intern-book.png";
 import iconCompanyTab from "../assets/icon-company-building.png";
 
-// White icons — used on the dark blue brand panel (left-side bullets)
 import iconWhite1 from "../assets/icon-white-1.png";
 import iconWhite2 from "../assets/icon-white-2.png";
 import iconWhite3 from "../assets/icon-white-3.png";
@@ -149,7 +148,7 @@ export default function Register() {
     }
 
     setError("");
-    // TODO: replace with your real registration API call
+   
     console.log("Registering", role, { ...formData, password });
 
     navigate("/login");
@@ -157,7 +156,7 @@ export default function Register() {
 
   return (
     <div className="ims-login-page">
-      {/* LEFT - brand panel, changes copy + bullets per role */}
+   
       <div className="ims-login-left ims-login-left--gradient">
         <div className="ims-login-left__inner">
           <Link to="/" className="ims-logo ims-logo--light">
@@ -195,7 +194,6 @@ export default function Register() {
         </div>
       </div>
 
-      {/* RIGHT - form panel */}
       <div className="ims-login-right">
         <div className="ims-register-form-wrap">
           <div className="ims-register-tabs">
