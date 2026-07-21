@@ -7,12 +7,10 @@ import { TrackingIcon, ShieldCheckIcon } from "./AuthIcons";
 import mentorOfficeImg from "../assets/Auth/Mentor-Office.png";
 import internAvatarImg from "../assets/Auth/Icon-Blueman.png";
 import handshakeIcon from "../assets/Auth/Icon-Handshake.png";
-import adminRoomIcon from "../assets/Auth/Icon-adminroom.png";
 import iconHR from "../assets/Auth/icon-HR.png";
 import iconMentor from "../assets/Auth/Icon-mentor.png";
 import iconIntern from "../assets/Auth/Icon-intern.png";
 import iconCompany from "../assets/Auth/Icon-company.png";
-import iconAdmin from "../assets/Auth/Icon-admin.png";
 import iconConnections from "../assets/Auth/icon-connections.png";
 import pplBackgroundIcon from "../assets/Auth/pplBackground.png";
 import sparkleIcon from "../assets/Auth/sparkle1.png";
@@ -165,37 +163,9 @@ const ROLE_CONFIG = {
       { name: "regNumber", label: "Registration Number", type: "text", placeholder: "Business ID or Tax ID", fullWidth: true },
     ],
   },
-  admin: {
-    label: "Admin",
-    tabIconImg: iconAdmin,
-    leftTitle: "Regain access to your professional future.",
-    leftText:
-      "Join thousands of companies and educational institutions managing their internship programs securely with InternMS.",
-    leftBullets: [
-      { icon: ShieldCheckIcon, title: "Role-based access", text: "Assign granular permissions across your organization." },
-      { icon: ShieldCheckIcon, title: "Trusted & Secure", text: "Bank-grade encryption protects every admin session." },
-    ],
-    leftImage: adminRoomIcon,
-    leftImageGlass: true,
-    formTitle: "Admin Registration",
-    formSubtitle: "Set up a secure administrator account for your organization.",
-    fields: [
-      { name: "fullName", label: "Full Name", type: "text", placeholder: "Enter your full name" },
-      { name: "email", label: "Email Address", type: "email", placeholder: "Enter your email address" },
-      { name: "phone", label: "Phone Number", type: "tel", placeholder: "Enter your phone number", hasPrefix: "+91" },
-      { name: "organization", label: "Organization / Institution Name", type: "text", placeholder: "Enter your organization or institution name" },
-      { name: "jobTitle", label: "Job Title / Designation", type: "text", placeholder: "e.g. IT Administrator" },
-      {
-        name: "country",
-        label: "Country",
-        type: "select",
-        options: ["India", "United States", "United Kingdom", "Canada", "Australia", "Other"],
-      },
-    ],
-  },
 };
 
-const ROLE_ORDER = ["hr", "mentor", "intern", "company", "admin"];
+const ROLE_ORDER = ["hr", "mentor", "intern", "company"];
 
 function BulletIconRenderer({ bullet }) {
   if (bullet.iconImg) {
@@ -238,7 +208,6 @@ export default function Register() {
   const config = ROLE_CONFIG[role];
   const isIntern = role === "intern";
   const isHrOrCompany = role === "hr" || role === "company";
-  const isAdmin = role === "admin";
 
   const handleRoleChange = (newRole) => {
     setRole(newRole);
@@ -280,12 +249,6 @@ export default function Register() {
         <div className="ims-login-left__inner">
           <h1>{config.leftTitle}</h1>
           <p>{config.leftText}</p>
-
-          {isAdmin && config.leftImage && config.leftImageGlass && (
-            <div className="ims-register-handshake ims-register-handshake--admin">
-              <img src={config.leftImage} alt="" />
-            </div>
-          )}
 
           {config.leftBullets && (
             <ul className={`ims-register-bullets ${isIntern ? "ims-register-bullets--glass" : ""}`}>
@@ -339,7 +302,7 @@ export default function Register() {
             </div>
           )}
 
-          {!isAdmin && config.leftImage && config.leftImageGlass && (
+          {config.leftImage && config.leftImageGlass && (
             <div className="ims-register-handshake">
               <img src={config.leftImage} alt="" />
             </div>
@@ -522,7 +485,6 @@ export default function Register() {
           </p>
         </div>
       </div>
-      {role === "admin" && <AuthFooter />}
     </div>
   );
 }
