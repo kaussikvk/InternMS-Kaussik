@@ -123,8 +123,8 @@ const ROLE_CONFIG = {
       {
         name: "gradYear",
         label: "Graduation Year",
-        type: "select",
-        options: ["2025", "2026", "2027", "2028", "2029"],
+        type: "number",
+        placeholder: "e.g. 2026",
       },
       { name: "resume", label: "Resume (Optional)", type: "file", fullWidth: true },
     ],
@@ -413,7 +413,7 @@ export default function Register() {
                     />
                   )}
 
-                  {["text", "email", "tel", "date"].includes(field.type) && !field.hasPrefix && (
+                  {["text", "email", "tel", "date", "number"].includes(field.type) && !field.hasPrefix && (
                     <input
                       type={field.type}
                       placeholder={field.placeholder}
@@ -423,7 +423,7 @@ export default function Register() {
                     />
                   )}
 
-                  {["text", "email", "tel", "date"].includes(field.type) && field.hasPrefix && (
+                  {["text", "email", "tel", "date", "number"].includes(field.type) && field.hasPrefix && (
                     <div className="ims-phone-prefix-row">
                       <span className="ims-phone-prefix-row__prefix">{field.hasPrefix}</span>
                       <input
